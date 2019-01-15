@@ -1,7 +1,7 @@
 const clock = document.querySelector('#clock')
 const date = document.querySelector('#date')
-const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 let timeDate = new Date()
 
 weekDay = () => days[timeDate.getDay()]
@@ -44,5 +44,5 @@ startClock = () => {
   setTimeout(startClock, 1000);
 }
 
-window.onload = getDate()
-window.onload = startClock()
+document.onload = getDate()
+document.onload = startClock()
