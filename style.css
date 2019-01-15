@@ -1,0 +1,24 @@
+body {
+  font-family: sans-serif;
+  color: white;
+  background-color: black;
+  text-align: center;
+  text-shadow: 2px 2px grey;
+}
+
+#container {
+  position: absolute;
+  height: 75%;
+  width: 85%;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#date {
+  font-size: 5.5vw;
+}
+
+#clock {
+  font-size: 20vw;
+}
