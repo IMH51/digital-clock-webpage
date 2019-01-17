@@ -35,5 +35,5 @@ startClock = () => {
   setTimeout(startClock, 1000);
 }
 
-document.onload = getDate()
+document.onload = getFullDate()
 document.onload = startClock()
