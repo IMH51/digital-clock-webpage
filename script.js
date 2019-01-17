@@ -4,11 +4,11 @@ const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satur
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 let timeDate = new Date()
 
-weekDay = () => days[timeDate.getDay()]
+weekDayText = () => days[timeDate.getDay()]
 
-month = () => months[timeDate.getMonth()]
+monthText = () => months[timeDate.getMonth()]
 
-dateCheck = () => {
+dateWithOrdinalIndicator = () => {
   let monthDate = timeDate.getDate().toString()
   if (monthDate.endsWith('1') && monthDate !== '11') {
     return monthDate + 'st'
@@ -21,26 +21,17 @@ dateCheck = () => {
   }
 }
 
-zeroCheck = (i) => {
-  if (i < 10) {
-    let sec = '0' + i
-    return sec
-  } else {
-    return i
-  }
-}
+getFullDate = () => date.innerText = weekDayText() + ', ' + dateWithOrdinalIndicator() + ' ' + monthText() + ' ' + timeDate.getFullYear()
 
-getDate = () => date.innerHTML = `${weekDay()}, ${dateCheck()} ${month()} ${timeDate.getFullYear()}`
+zeroCheck = (integer) =>  integer < 10 ? '0' + integer : integer
 
 startClock = () => {
   timeDate = new Date()
   let hour = zeroCheck(timeDate.getHours())
   let minutes = zeroCheck(timeDate.getMinutes())
   let seconds = zeroCheck(timeDate.getSeconds())
-  if (parseInt(hour) + parseInt(minutes) + parseInt(seconds) == 0) {
-    getDate()
-  }
-  clock.innerHTML = hour + ':' + minutes + ':' + seconds
+  if (parseInt(hour) + parseInt(minutes) + parseInt(seconds) === 0) getFullDate()
+  clock.innerText = hour + ':' + minutes + ':' + seconds
   setTimeout(startClock, 1000);
 }
 
